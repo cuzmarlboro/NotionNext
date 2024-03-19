@@ -10,12 +10,12 @@ import NotionIcon from '@/components/NotionIcon'
  * @param {*} props
  * @returns
  */
-export default function ArticleInfo (props) {
-  const { post } = props
+export default function ArticleInfo(props) {
+    const { post } = props
 
-  const { locale } = useGlobal()
+    const { locale } = useGlobal()
 
-  return (
+    return (
         <section className="mt-2 text-gray-600 dark:text-gray-400 leading-8">
             <h2
                 className="blog-item-title mb-5 font-bold text-black text-xl md:text-2xl no-underline">
@@ -41,9 +41,9 @@ export default function ArticleInfo (props) {
                         </Link>
                     </span>
                     <span className='mr-2'>|</span>
-                    <span className='mx-2  dark:text-gray-500'>
+                    {/* <span className='mx-2  dark:text-gray-500'>
                         {locale.COMMON.LAST_EDITED_TIME}: {post?.lastEditedDay}
-                    </span>
+                    </span> */}
                     <span className='mr-2'>|</span>
                     <span className="hidden busuanzi_container_page_pv font-light mr-2">
                         <i className='mr-1 fas fa-eye' />
@@ -54,5 +54,5 @@ export default function ArticleInfo (props) {
 
             </div>
         </section>
-  )
+    )
 }

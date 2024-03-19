@@ -43,15 +43,15 @@ export default function ArticleDetail(props) {
           <section className="flex-wrap flex mt-2 text-gray-400 dark:text-gray-400 font-light leading-8">
             <div>
               {post?.category && (<>
-                  <Link
-                    href={`/category/${post.category}`}
-                    passHref
-                    className="cursor-pointer text-md mr-2 hover:text-black dark:hover:text-white border-b dark:border-gray-500 border-dashed">
+                <Link
+                  href={`/category/${post.category}`}
+                  passHref
+                  className="cursor-pointer text-md mr-2 hover:text-black dark:hover:text-white border-b dark:border-gray-500 border-dashed">
 
-                    <i className="mr-1 fas fa-folder-open" />
-                    {post.category}
+                  <i className="mr-1 fas fa-folder-open" />
+                  {post.category}
 
-                  </Link>
+                </Link>
                 <span className='mr-2'>|</span>
               </>)}
 
@@ -65,25 +65,25 @@ export default function ArticleDetail(props) {
 
                 </Link>
                 <span className='mr-2'>|</span>
-                <span className='mx-2 text-gray-400 dark:text-gray-500'>
+                {/* <span className='mx-2 text-gray-400 dark:text-gray-500'>
                   {locale.COMMON.LAST_EDITED_TIME}: {post.lastEditedDay}
-                </span>
+                </span> */}
               </>)}
 
-            <div className='my-2'>
+              <div className='my-2'>
                 {post.tagItems && (
-                    <div className="flex flex-nowrap overflow-x-auto">
-                        {post.tagItems.map(tag => (
-                            <TagItemMini key={tag.name} tag={tag} />
-                        ))}
-                    </div>
+                  <div className="flex flex-nowrap overflow-x-auto">
+                    {post.tagItems.map(tag => (
+                      <TagItemMini key={tag.name} tag={tag} />
+                    ))}
+                  </div>
                 )}
-            </div>
+              </div>
             </div>
 
           </section>
 
-          <WWAds className='w-full' orientation='horizontal'/>
+          <WWAds className='w-full' orientation='horizontal' />
         </header>
 
         {/* Notion文章主体 */}
@@ -92,14 +92,14 @@ export default function ArticleDetail(props) {
         </section>
 
         <section>
-          <AdSlot type='in-article'/>
-           {/* 分享 */}
-           <ShareBar post={post} />
+          <AdSlot type='in-article' />
+          {/* 分享 */}
+          <ShareBar post={post} />
         </section>
 
       </article>
 
-      {post?.type === 'Post' && <ArticleAround prev={prev} next={next} /> }
+      {post?.type === 'Post' && <ArticleAround prev={prev} next={next} />}
 
       {/* 评论互动 */}
       <div className="duration-200 shadow py-6 px-12 w-screen md:w-full overflow-x-auto dark:border-gray-700 bg-white dark:bg-hexo-black-gray">
