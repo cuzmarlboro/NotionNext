@@ -2,7 +2,7 @@
  * @Author: 何泽颖 hezeying@autowise.ai
  * @Date: 2024-03-08 16:21:39
  * @LastEditors: 何泽颖 hezeying@autowise.ai
- * @LastEditTime: 2024-03-19 13:50:30
+ * @LastEditTime: 2024-03-19 14:18:40
  * @FilePath: /NotionNext/components/ShareBar.js
  * @Description: 
  */
@@ -28,3 +28,5 @@ const ShareBar = ({ post }) => {
   </div>
 }
 export default ShareBar
+
+
