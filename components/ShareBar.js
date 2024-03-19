@@ -1,5 +1,5 @@
 import { siteConfig } from '@/lib/config'
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 
 // const ShareButtons = dynamic(() => import('@/components/ShareButtons'), { ssr: false })
 
