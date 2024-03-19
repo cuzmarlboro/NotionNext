@@ -1,3 +1,11 @@
+/*
+ * @Author: 何泽颖 hezeying@autowise.ai
+ * @Date: 2024-03-08 16:21:39
+ * @LastEditors: 何泽颖 hezeying@autowise.ai
+ * @LastEditTime: 2024-03-19 13:50:30
+ * @FilePath: /NotionNext/components/ShareBar.js
+ * @Description: 
+ */
 import { siteConfig } from '@/lib/config'
 import dynamic from 'next/dynamic'
 
@@ -14,9 +22,9 @@ const ShareBar = ({ post }) => {
   }
 
   return <div className='m-1 overflow-x-auto'>
-        <div className='flex w-full md:justify-end'>
+    {/* <div className='flex w-full md:justify-end'>
             <ShareButtons post={post} />
-        </div>
-    </div>
+        </div> */}
+  </div>
 }
 export default ShareBar
