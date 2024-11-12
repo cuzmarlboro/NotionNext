@@ -38,17 +38,27 @@ const ThemeSwitch = () => {
     changeLang(newLang)
   }
 
-  return (<>
-        <Draggable>
-            <div id="draggableBox" style={{ left: '0px', top: '80vh' }} className="fixed group space-y-2 overflow-hidden z-50 p-3 flex flex-col items-start dark:text-white bg-white dark:bg-black rounded-xl shadow-lg ">
-                {/* 深色按钮 */}
-                <div className="text-sm flex items-center w-0 group-hover:w-32 transition-all duration-200">
-                    <DarkModeButton />
-                    <div onClick={toggleDarkMode} className='cursor-pointer w-0 group-hover:w-24 transition-all duration-200 overflow-hidden whitespace-nowrap pl-1 h-auto'>{isDarkMode ? locale.MENU.DARK_MODE : locale.MENU.LIGHT_MODE}</div>
-                </div>
+  return (
+    <>
+      <Draggable>
+        <div
+          id="draggableBox"
+          style={{ left: '0px', top: '80vh' }}
+          className="fixed group space-y-2 overflow-hidden z-50 p-3 flex flex-col items-start dark:text-white bg-white dark:bg-black rounded-xl shadow-lg "
+        >
+          {/* 深色按钮 */}
+          <div className="text-sm flex items-center w-0 group-hover:w-32 transition-all duration-200">
+            <DarkModeButton />
+            <div
+              onClick={toggleDarkMode}
+              className="cursor-pointer w-0 group-hover:w-24 transition-all duration-200 overflow-hidden whitespace-nowrap pl-1 h-auto"
+            >
+              {isDarkMode ? locale.MENU.DARK_MODE : locale.MENU.LIGHT_MODE}
+            </div>
+          </div>
 
-                {/* 翻译按钮 */}
-                <div className="text-sm flex items-center group-hover:w-32 transition-all duration-200">
+          {/* 翻译按钮 */}
+          {/* <div className="text-sm flex items-center group-hover:w-32 transition-all duration-200">
                     <i className="fa-solid fa-language w-5" />
                     <div className='w-0 group-hover:w-24 transition-all duration-200 overflow-hidden'>
                         <label htmlFor="langSelect" className="sr-only">选择语言：</label>
@@ -58,10 +68,10 @@ const ThemeSwitch = () => {
                             })}
                         </select>
                     </div>
-                </div>
+                </div> */}
 
-                {/* 主题切换按钮 */}
-                <div className="text-sm flex items-center group-hover:w-32 transition-all duration-200">
+          {/* 主题切换按钮 */}
+          {/* <div className="text-sm flex items-center group-hover:w-32 transition-all duration-200">
                     <i className="fa-solid fa-palette w-5" />
                     <div className='w-0 group-hover:w-24 transition-all duration-200 overflow-hidden'>
                         <label htmlFor="themeSelect" className="sr-only">选择主题：</label>
@@ -71,16 +81,18 @@ const ThemeSwitch = () => {
                             })}
                         </select>
                     </div>
-                </div>
-            </div>
-        </Draggable>
-
-        {/* 切换主题加载时的全屏遮罩 */}
-        <div className={`${isLoading ? 'opacity-90 ' : 'opacity-0'} 
-            w-screen h-screen glassmorphism bg-black text-white shadow-text flex justify-center items-center
-            transition-all fixed top-0 left-0 pointer-events-none duration-1000 z-50 shadow-inner`}>
-            <i className='text-3xl mr-5 fas fa-spinner animate-spin' />
+                </div> */}
         </div>
+      </Draggable>
+
+      {/* 切换主题加载时的全屏遮罩 */}
+      <div
+        className={`${isLoading ? 'opacity-90 ' : 'opacity-0'} 
+            w-screen h-screen glassmorphism bg-black text-white shadow-text flex justify-center items-center
+            transition-all fixed top-0 left-0 pointer-events-none duration-1000 z-50 shadow-inner`}
+      >
+        <i className="text-3xl mr-5 fas fa-spinner animate-spin" />
+      </div>
     </>
   )
 }
