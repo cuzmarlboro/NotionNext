@@ -11,32 +11,30 @@ import LANGS from '@/lib/lang'
  * @returns 主题切换
  */
 const ThemeSwitch = () => {
-  const { theme, lang, changeLang, locale, isDarkMode, toggleDarkMode } = useGlobal()
-  const router = useRouter()
-  const currentTheme = getQueryParam(router.asPath, 'theme') || theme
+  const { locale, isDarkMode, toggleDarkMode } = useGlobal()
+
   //   const currentLang = getQueryParam(router.asPath, 'lang') || lang
-  const [isLoading, setIsLoading] = useState(false)
 
   // 修改当前路径url中的 theme 参数
   // 例如 http://localhost?theme=hexo 跳转到 http://localhost?theme=newTheme
-  const onThemeSelectChange = (e) => {
-    document.ontouchmove = document.ontouchend = document.onmousemove = document.onmouseup = null
-    setIsLoading(true)
-    const newTheme = e.target.value
-    const query = router.query
-    query.theme = newTheme
-    router.push({ pathname: router.pathname, query }).then(() => {
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 500);
-    })
-  }
+  // const onThemeSelectChange = (e) => {
+  //   document.ontouchmove = document.ontouchend = document.onmousemove = document.onmouseup = null
+  //   setIsLoading(true)
+  //   const newTheme = e.target.value
+  //   const query = router.query
+  //   query.theme = newTheme
+  //   router.push({ pathname: router.pathname, query }).then(() => {
+  //     setTimeout(() => {
+  //       setIsLoading(false)
+  //     }, 500);
+  //   })
+  // }
 
-  const onLangSelectChange = (e) => {
-    document.ontouchmove = document.ontouchend = document.onmousemove = document.onmouseup = null
-    const newLang = e.target.value
-    changeLang(newLang)
-  }
+  // const onLangSelectChange = (e) => {
+  //   document.ontouchmove = document.ontouchend = document.onmousemove = document.onmouseup = null
+  //   const newLang = e.target.value
+  //   changeLang(newLang)
+  // }
 
   return (
     <>
@@ -84,15 +82,6 @@ const ThemeSwitch = () => {
                 </div> */}
         </div>
       </Draggable>
-
-      {/* 切换主题加载时的全屏遮罩 */}
-      <div
-        className={`${isLoading ? 'opacity-90 ' : 'opacity-0'} 
-            w-screen h-screen glassmorphism bg-black text-white shadow-text flex justify-center items-center
-            transition-all fixed top-0 left-0 pointer-events-none duration-1000 z-50 shadow-inner`}
-      >
-        <i className="text-3xl mr-5 fas fa-spinner animate-spin" />
-      </div>
     </>
   )
 }
